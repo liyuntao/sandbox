@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+scrape_configs:
+  - job_name: 'fzone'
+    metrics_path: /api/v1/fzone/actuator/prometheus
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+  - job_name: 'auth-center'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+  - job_name: 'drone'
+    metrics_path: /metrics
+    scheme: https
+    static_configs:
+      - targets: ['drone.finogeeks.club']
