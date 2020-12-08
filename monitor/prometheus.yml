@@ -7,6 +7,6 @@ scrape_configs:
     static_configs:
       - targets: ['host.docker.internal:9091']
   - job_name: 'margin-module'
-    metrics_path: /margin-module/prometheus
+    metrics_path: /actuator/prometheus
     static_configs:
       - targets: ['host.docker.internal:9091']
